@@ -1,5 +1,0 @@
-var h=Object.defineProperty;var d=(t,e,r)=>e in t?h(t,e,{enumerable:!0,configurable:!0,writable:!0,value:r}):t[e]=r;var s=(t,e,r)=>(d(t,typeof e!="symbol"?e+"":e,r),r);import{c as o,z as u,E as c,S as m,M as B,a as w,b as l}from"./three.module-d899fbfe.js";class S{constructor(e,r,a,i,f,n){s(this,"scene",new m);s(this,"readBuffer");s(this,"writeBuffer");this.renderer=e,this.camera=r,this.fragment=a,this.uniforms=i,this.readBuffer=new o(f,n,{format:u,type:c}),this.writeBuffer=this.readBuffer.clone(),this.createMesh()}swapBuffers(){const e=this.readBuffer;this.readBuffer=this.writeBuffer,this.writeBuffer=e}render(){this.renderer.setRenderTarget(this.writeBuffer),this.renderer.render(this.scene,this.camera),this.renderer.setRenderTarget(null),this.swapBuffers()}createMesh(){this.scene.add(new B(new w(2,2),new l({fragmentShader:this.fragment,vertexShader:`void main() {
-                
-                        gl_Position = vec4(position, 1.0);
-                     
-                }`,uniforms:this.uniforms})))}}export{S as B};
